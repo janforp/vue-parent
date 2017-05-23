@@ -8,11 +8,28 @@ new Vue({
   data: {
     msg: 'hello world',
     title: 'todos',
-    newToDo: 'vue公开课'
+    newToDo: '',
+    todos: [
+      {
+        content : 'vue',
+        completed: false
+      },
+      {
+        content : 'vuex',
+        completed: false
+      }
+    ],
   },
   methods : {
-    addToDo(e) {
-      console.log(e.target.value)
+    addToDo() {
+      this.todos.push({
+        content: this.newToDo,
+        completed : false
+      });
+      this.newToDo = '';
+    },
+    removeToDo(index){
+      this.todos.splice(index,1);
     }
   }
 
