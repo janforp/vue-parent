@@ -11,7 +11,7 @@
     <p>child tells me : {{ childWords }}</p>
     <!-- 使用组件A -->
     <!-- 父向子传消息 -->
-    <component-a msgfromfather='you Die!' 
+    <component-a msgfromfather='you Die!'
       v-on:child-tell-me-something='listenToMyBoy'></component-a>
   </div>
 </template>
@@ -32,6 +32,8 @@ export default {
       childWords:''
     }
   },
+
+
   components :{
     //必须注册组件才能使用
     ComponentA
@@ -64,7 +66,7 @@ export default {
   }
 }
 </script>
-  
+
 <style>
   .finished {
     color:blue
