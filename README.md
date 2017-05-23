@@ -12,7 +12,7 @@ http://study.163.com/course/courseLearn.htm?courseId=1003797015#/learn/video?les
 
 https://cn.vuejs.org/v2/api/#v-on
 
-首次
+首次(安装node,npm)
 1.安装taobao的 cnpm
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 
