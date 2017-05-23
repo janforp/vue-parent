@@ -5,7 +5,10 @@ import Vue from 'vue'
 
 new Vue({
   el: '.todoapp',
-
+  data: {
+    msg: 'hello world',
+    title: 'todosmvc',
+  }
 
 
 
