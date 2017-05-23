@@ -17,7 +17,7 @@ let url = 'http://localhost:9000/pic/list'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
+let vm = new Vue({
   el: '#app',
   // template: '<App/>',
   components: { App },
@@ -51,32 +51,56 @@ new Vue({
     // console.log("created",this.msg,this.getLists())
     this.getLists();
     this.init();
-    console.log(document.querySelectorAll("li").length);
+    // console.log(document.querySelectorAll("li").length);
+    setTimeout(()=>{
+      this.arr = [4,5,6,7]
+      console.log(document.querySelectorAll("li").length);
+      this.$nextTick(()=>{
+        console.log('$nextTick',document.querySelectorAll("li").length);
+      })
+    },0);
 
+    setTimeout(()=>{
+      this.arr = [14,15,16,17,19];
+      console.log(document.querySelectorAll("li").length);
+      this.$nextTick(()=>{
+        console.log('$nextTick',document.querySelectorAll("li").length);
+      })
+    },1000)
   },
   beforeMount() {
-    console.log(document.querySelectorAll("li").length);
+    // console.log(document.querySelectorAll("li").length);
   },
   //到这个阶段dom完全渲染完毕
   mounted() {
     console.log(document.querySelectorAll("li").length);
   },
   beforeUpdate() {
-
+    console.log('beforeUpdate',document.querySelectorAll("li").length);
   },
-  updated() {
 
+  //数据更新完毕，如果对更新数据做统一处理在updated钩子中处理即可，
+  //如果想分别处理不同的数据更新，同时对dom操作，使用nextTick()函数处理
+  updated() {
+    console.log('updated',document.querySelectorAll("li").length);
   },
   beforeDestroy() {
-
+    console.log('beforeDestroy');
   },
-    destroyed() {
-
+  destroyed() {
+    console.log('destroyed');
   },
   activated() {
 
   },
   deactivated() {
 
+  },
+
+  //对具体某个数据变化做统一处理
+  watch:{
+    'arr' : function () {
+
+    }
   }
-})
+}).$mount("#app");
