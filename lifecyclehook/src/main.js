@@ -19,15 +19,21 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  template: '<App/>',
+  // template: '<App/>',
   components: { App },
   data : {
-    msg : 'lifecycle'
+    msg : 'lifecycle',
+    imgs: null
   },
   methods: {
     getLists() {
       this.$http.get(url).then(res => {
-        console.log(res);
+        this.imgs = res.data
+        var two = res.data;
+        console.log(two)
+        for(var i = 0; i<two.length;i++) {
+          console.log(two[i].img)
+        }
       })
     }
   },

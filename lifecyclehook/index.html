@@ -5,7 +5,13 @@
     <title>lifecyclehook</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <ul>
+        <li v-for="(item,index) in imgs" :key="index" v-if="imgs&&imgs.length">
+          <img :src="item.img">
+        </li>
+      </ul>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>

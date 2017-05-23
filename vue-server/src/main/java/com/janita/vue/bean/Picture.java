@@ -11,7 +11,8 @@ public class Picture implements Serializable {
 
     private String color;
 
-    private String url ;
+    private String img;
+
 
     public String getName() {
         return name;
@@ -29,12 +30,12 @@ public class Picture implements Serializable {
         this.color = color;
     }
 
-    public String getUrl() {
-        return url;
+    public String getImg() {
+        return img;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setImg(String img) {
+        this.img = img;
     }
 
     @Override
@@ -42,7 +43,7 @@ public class Picture implements Serializable {
         return "Picture{" +
                 "name='" + name + '\'' +
                 ", color='" + color + '\'' +
-                ", url='" + url + '\'' +
+                ", img='" + img + '\'' +
                 '}';
     }
 }

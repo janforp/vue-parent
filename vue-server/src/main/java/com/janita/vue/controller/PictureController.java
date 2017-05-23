@@ -1,6 +1,7 @@
 package com.janita.vue.controller;
 
 import com.janita.vue.bean.Picture;
+import com.janita.vue.consts.VueConst;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,11 +25,11 @@ public class PictureController {
         Picture pictureB = new Picture();
         pictureA.setName("科比");
         pictureA.setColor("黄色");
-        pictureA.setUrl("");
+        pictureA.setImg(VueConst.KOBE);
 
         pictureB.setName("麦迪");
         pictureB.setColor("红色");
-        pictureB.setUrl("");
+        pictureB.setImg(VueConst.MAIDI);
 
         pictures.add(pictureA);
         pictures.add(pictureB);

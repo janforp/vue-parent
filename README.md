@@ -5,6 +5,9 @@ vue项目
 慕课网：
 http://www.imooc.com/learn/694
 
+网易云课堂：
+http://study.163.com/course/courseLearn.htm?courseId=1003797015#/learn/video?lessonId=1004399316&courseId=1003797015
+
 官网：
 
 https://cn.vuejs.org/v2/api/#v-on
