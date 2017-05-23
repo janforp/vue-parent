@@ -23,18 +23,22 @@ new Vue({
   components: { App },
   data : {
     msg : 'lifecycle',
-    imgs: null
+    imgs: null,
+    arr:[10,12,13]
   },
   methods: {
     getLists() {
       this.$http.get(url).then(res => {
         this.imgs = res.data
         var two = res.data;
-        console.log(two)
-        for(var i = 0; i<two.length;i++) {
-          console.log(two[i].img)
-        }
+        // console.log(two)
+        // for(var i = 0; i<two.length;i++) {
+        //   console.log(two[i].img)
+        // }
       })
+    },
+    init(){
+
     }
   },
   beforeCreate() {
@@ -46,13 +50,16 @@ new Vue({
     //可以访问到了
     // console.log("created",this.msg,this.getLists())
     this.getLists();
+    this.init();
+    console.log(document.querySelectorAll("li").length);
+
   },
   beforeMount() {
-
+    console.log(document.querySelectorAll("li").length);
   },
-  //常用
+  //到这个阶段dom完全渲染完毕
   mounted() {
-
+    console.log(document.querySelectorAll("li").length);
   },
   beforeUpdate() {
 

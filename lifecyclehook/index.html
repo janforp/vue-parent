@@ -6,10 +6,14 @@
   </head>
   <body>
     <div id="app">
+      <!--<ul>-->
+        <!--<li v-for="(item,index) in imgs" :key="index" v-if="imgs&&imgs.length">-->
+          <!--<img :src="item.img">-->
+        <!--</li>-->
+      <!--</ul>-->
+
       <ul>
-        <li v-for="(item,index) in imgs" :key="index" v-if="imgs&&imgs.length">
-          <img :src="item.img">
-        </li>
+        <li v-for="(item,index) in arr">{{ item }}</li>
       </ul>
     </div>
     <!-- built files will be auto injected -->
