@@ -7,7 +7,13 @@ new Vue({
   el: '.todoapp',
   data: {
     msg: 'hello world',
-    title: 'todosmvc',
+    title: 'todos',
+    newToDo: 'vue公开课'
+  },
+  methods : {
+    addToDo(e) {
+      console.log(e.target.value)
+    }
   }
 
 
