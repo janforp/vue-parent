@@ -104,3 +104,5 @@ let vm = new Vue({
     }
   }
 }).$mount("#app");
+
+vm.$destroy()
