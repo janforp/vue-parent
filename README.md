@@ -32,4 +32,6 @@ cnpm install
 npm run dev
 
 
-千王注意：
+可能会用的：
+1.vue-resource
+cnpm i vue-resource -S
