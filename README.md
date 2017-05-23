@@ -24,5 +24,12 @@ vue init webpack + 项目名称
 cd到项目名称下
 cnpm install
 
+##千王注意：
+在执行4之前，先在项目中新建 node_modules 目录，右键 Mark as Excluded 
+否则在安装这些依赖的时候会导致IDE内存溢出。如果一个文件被标识为 Excluded 状态，则他不会创建索引
+
 5.启动项目
 npm run dev
+
+
+千王注意：
