@@ -16,10 +16,10 @@
           @keyup.enter="addToDo">
 			</header>
 			<section class="main">
-				<input class="toggle-all" type="checkbox" id="toggle-all">
+        <!--全选，双向数据绑定-->
+				<input class="toggle-all" type="checkbox" id="toggle-all" v-model="isAll">
 				<label for="toggle-all">Mark all as complete</label>
 				<ul class="todo-list">
-
           <!--v-for循环遍历数组-->
           <!--样式绑定-->
 					<li v-for="(todo,index) in todos" :class="{completed : todo.completed }">
@@ -37,7 +37,7 @@
 
       <!--v-show绝对dom元素的显示或隐藏-->
 			<footer class="footer" v-show = "todos.length">
-				<span class="todo-count"><strong>0</strong> item left</span>
+				<span class="todo-count"><strong>{{ remain }}</strong> item left</span>
 				<ul class="filters">
 					<li>
 						<a class="selected" href="#/">All</a>

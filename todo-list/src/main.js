@@ -1,7 +1,23 @@
 import 'todomvc-app-css/index.css'
 
 import Vue from 'vue'
-// let Vue = require('vue')
+
+//定义一个过滤器
+var filters = {
+  all(todos) {
+    return todos;
+  },
+  active(todos) {
+    return todos.filter((todo) => {
+      return !todo.completed;
+    });
+  },
+  completed(todos) {
+    return todos.filter((todo) => {
+      return todo.completed
+    })
+  }
+};
 
 new Vue({
   el: '.todoapp',
@@ -19,6 +35,23 @@ new Vue({
         completed: false
       }
     ],
+  },
+
+  //计算属性
+  computed: {
+    remain() {
+      return filters.active(this.todos).length;
+    },
+    isAll: {
+       get() {
+         return this.remain === 0
+       },
+        set(value) {
+         this.todos.forEach((todo)=>{
+           todo.completed = value;
+         })
+        }
+    },
   },
   methods : {
     addToDo() {
