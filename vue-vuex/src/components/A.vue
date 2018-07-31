@@ -16,6 +16,7 @@
     },
     methods:{
         goB() {
+
           this.$router.push({path:'/B'});
         }
     }
