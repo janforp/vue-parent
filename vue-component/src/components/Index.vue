@@ -2,20 +2,23 @@
   <div>
     <HeaderComponent></HeaderComponent>
     <router-view></router-view>
-    <div>我是底部</div>
+    <FooterComponent :fromParent="fromParentMsg" :fromParent2="fromParent2"></FooterComponent>
   </div>
 </template>
 
 <script>
   import HeaderComponent from './common/Header.vue'
+  import FooterComponent from './common/Footer.vue'
   export default {
     name: 'Index',
     components:{
-      "HeaderComponent":HeaderComponent
+      "HeaderComponent":HeaderComponent,
+      "FooterComponent":FooterComponent
     },
     data () {
       return {
-        msg: '我是主页'
+        fromParentMsg: '从index传来的参数',
+        fromParent2:'我是第二个参数'
       }
     }
   }
