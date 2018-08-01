@@ -1,0 +1,8 @@
+vuex的作用就是不同组件之间的通信
+
+
+不管是那个组件调用方法改变了存入vuex state中的值，其他使用到的地方都会改变
+
+统一入口：
+1.统一从vuex中获取数据的地方:mapGetters获取state中的数据
+2.统一修改vuex中的数据的地方:mapActions中获取mutation的方法
