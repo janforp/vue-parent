@@ -27,6 +27,10 @@ const actions = {
 
   addToCart({commit}, product) {
     commit('add', {id:product.id});
+  },
+
+  delProduct({commit}, product) {
+    commit('del', {product});
   }
 }
 
@@ -46,6 +50,24 @@ const mutations = {
     }else {
       record.num++;
     }
+  },
+
+  del(state, {product}) {
+   // const added = state.added;
+   // let index = 0;
+   // for (let i=0; i< added.length;i++) {
+   //   if (product.id === added[i].id) {
+   //     index = i;
+   //   }
+   // }
+   // added.splice(index, 1)
+    state.added.forEach((n,i)=>{
+      if(n.id === product.id){
+        //console.info(11,n)
+        //找到index的下标值
+        state.added.splice(i,1)
+      }
+    })
   }
 }
 
