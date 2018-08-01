@@ -34,6 +34,10 @@
     },
     computed: {
       ...mapGetters(['shopList'])
+    },
+
+    methods:{
+      ...mapActions(['addToCart'])
     }
   }
 </script>

@@ -3,16 +3,20 @@
     <h3>Vuex购物车demo</h3>
     <!-- 商品的列表 -->
     <product></product>
+    <cart></cart>
+    <!--<info></info>-->
   </div>
 </template>
 
 <script>
+  import info from './info';
+  import cart from './cart';
   import product from './product';
   import { mapActions} from "vuex";
   export default {
     name: 'app',
     components: {
-      product,
+      product,cart
     },
 
     mounted(){
