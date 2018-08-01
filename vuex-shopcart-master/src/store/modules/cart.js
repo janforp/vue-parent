@@ -21,7 +21,7 @@ const state = {
 
       //添加到购物车的商品
       added:[]
-}
+};
 
 //getter 抛出去的数据
 const getters = {
@@ -30,7 +30,7 @@ const getters = {
     //购物车的列表
     cartProducts:state=>{
         return state.added.map(({id,num})=>{
-            let product = state.shop_list.find(n=>n.id == id)
+            let product = state.shop_list.find(n=>n.id === id)
             // console.info('product',product)
             return {
                 ...product,
@@ -80,7 +80,7 @@ const actions = {
 const mutations = {
     //添加到购物车操作
     add(state,{id}){
-        let record = state.added.find(n=>n.id == id);
+        let record = state.added.find(n=>n.id === id);
         if(!record){
             state.added.push({
                 id,
@@ -100,7 +100,7 @@ const mutations = {
     del(state,product){
         //console.info(state,product)
         state.added.forEach((n,i)=>{
-            if(n.id == product.id){
+            if(n.id === product.id){
                 //console.info(11,n)
                 //找到index的下标值
                 state.added.splice(i,1)
