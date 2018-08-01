@@ -1,34 +1,30 @@
 const state = {
-
-  shop_list:[
-    {
-      id: 11,
-      name: '鱼香肉丝',
-      price: 12,
-    },
-    {
-      id: 22,
-      name: '宫保鸡丁',
-      price: 14
-    },
-    {
-      id: 34,
-      name: '土豆丝',
-      price: 10
-    },
-    {
-      id: 47,
-      name: '米饭',
-      price: 2
-    }
-  ],
+  shop_list:[],
 }
 
 const getters = {
   shopList: state => state.shop_list,
 }
 
+const actions = {
+
+  //向shopList中塞入数据的时候，所有使用该数据的组件都会重新渲染
+  addShopList({commit},list) {
+    commit('addList', {list})
+  }
+}
+
+const mutations = {
+
+  ////向shopList中塞入数据的时候，所有使用该数据的组件都会重新渲染
+  addList(state, {list}) {
+    state.shop_list= list;
+  }
+}
+
 export default {
   state,
   getters,
+  actions,
+  mutations
 };
