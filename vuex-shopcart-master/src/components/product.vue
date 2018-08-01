@@ -17,23 +17,16 @@
           <td>{{shop.name}}</td>
           <td>{{shop.price}}</td>
           <td>
-            <div @click='addToCart(shop)' class="btn btn-info">购物车</div>
+            <div @click='addToCart(shop)' class="btn btn-info">添加到购物车</div>
           </td>
         </tr>
       </tbody>
     </table>
-
-
-
-
   </div>
 </template>
 
 <script>
-  import {
-    mapGetters,
-    mapActions
-  } from "vuex";
+  import {mapGetters, mapActions} from "vuex";
 
   export default {
     name: 'product',

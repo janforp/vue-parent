@@ -1,23 +1,28 @@
 //初始化数据
 const state = {
     //商品列表
-    shop_list: [{
+    shop_list: [
+      {
         id: 11,
         name: '鱼香肉丝',
         price: 12,
-      }, {
+      },
+      {
         id: 22,
         name: '宫保鸡丁',
         price: 14
-      }, {
+      },
+      {
         id: 34,
         name: '土豆丝',
         price: 10
-      }, {
+      },
+      {
         id: 47,
         name: '米饭',
         price: 2
-      }],
+      }
+    ],
 
       //添加到购物车的商品
       added:[]
@@ -31,7 +36,7 @@ const getters = {
     cartProducts:state=>{
         return state.added.map(({id,num})=>{
             let product = state.shop_list.find(n=>n.id === id)
-            // console.info('product',product)
+            console.info('product',product)
             return {
                 ...product,
                 num
@@ -62,9 +67,7 @@ const getters = {
 const actions = {
     //添加到购物车操作
     addToCart({commit},product){
-        commit('add',{
-            id:product.id
-        })
+        commit('add',{id:product.id})
     },
     //清除购物车
     clearAllCart({commit}){
@@ -80,17 +83,13 @@ const actions = {
 const mutations = {
     //添加到购物车操作
     add(state,{id}){
-        let record = state.added.find(n=>n.id === id);
+        let record = state.added.find(n => (n.id === id));
         if(!record){
-            state.added.push({
-                id,
-                num:1
-            })
+            state.added.push({id, num:1})
         }else {
             record.num++
         }
-        // console.info(record)
-
+        console.info(record)
     },
     //清除购物车
     clearAll(state){
@@ -98,7 +97,7 @@ const mutations = {
     },
     //删除购物车的指定的商品
     del(state,product){
-        //console.info(state,product)
+        console.info(state,product)
         state.added.forEach((n,i)=>{
             if(n.id === product.id){
                 //console.info(11,n)
